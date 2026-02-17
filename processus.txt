@@ -1,0 +1,25 @@
+création de bases de données:
+
+CREATE DATABASE projet_php;
+
+création tables:
+
+CREATE TABLE villes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    pays VARCHAR(100) NOT NULL,
+    capitale BOOLEAN DEFAULT FALSE
+);
+
+nom des villes:
+
+INSERT INTO villes (nom, pays, capitale) VALUES ('Bruxelles', 'Belgique', TRUE),
+    -> ('Paris', 'France', TRUE),
+    -> ('Londres', 'Royaume-Uni', TRUE),
+    -> ('Berlin', 'Allemagne', TRUE),
+    -> ('Madrid', 'Espagne', TRUE),
+    -> ('Rome', 'Italie', TRUE),
+    -> ('Tanger', 'Maroc', TRUE),
+    -> ('Tokyo', 'Japon', TRUE),
+    -> ('Amsterdam', 'Pays-Bas', TRUE),
+    -> ('Lisbonne', 'Portugal', TRUE);
