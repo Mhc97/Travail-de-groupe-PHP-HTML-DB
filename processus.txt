@@ -23,3 +23,12 @@ INSERT INTO villes (nom, pays, capitale) VALUES ('Bruxelles', 'Belgique', TRUE),
     -> ('Tokyo', 'Japon', TRUE),
     -> ('Amsterdam', 'Pays-Bas', TRUE),
     -> ('Lisbonne', 'Portugal', TRUE);
+
+
+
+ALTER TABLE villes ADD nationalite VARCHAR(50);
+UPDATE villes SET nationalite = 'Belge' WHERE pays = 'Belgique';
+pour ajouter nationalite les 10 villes
+
+ALTER TABLE villes ADD nationalite VARCHAR(50);
+UPDATE villes SET nationalite = 'Japonaise' WHERE pays = 'Japon' AND set nationalite 'portugaise' WHERE pays = 'portugal';
