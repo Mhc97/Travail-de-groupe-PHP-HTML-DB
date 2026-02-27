@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once '../classes/Ville.php';
+require_once 'classes/Ville.php';
 
 $villeObj = new Ville();
 $villes = $villeObj->getAllVillesWithNationalite();
@@ -36,11 +36,11 @@ $villes = $villeObj->getAllVillesWithNationalite();
                 <?php foreach ($villes as $v): ?>
                     <tr>
                         <td>#<?php $v['id'] ?></td>
-                        <td><strong><?php htmlspecialchars($v['nom']) ?></strong></td>
-                        <td><?php htmlspecialchars($v['pays']) ?></td>
+                        <td><strong><?php echo htmlspecialchars($v['nom']) ?></strong></td>
+                        <td><?php echo htmlspecialchars($v['pays']) ?></td>
                         <td>
                             <span class="nationalite-badge">
-                                <?php htmlspecialchars($v['nationalite']) ?>
+                                <?php echo htmlspecialchars($v['nationalite']) ?>
                             </span>
                         </td>
                         <td>

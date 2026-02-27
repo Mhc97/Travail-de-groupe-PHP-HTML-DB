@@ -16,15 +16,17 @@ $villes = $villeObj->getNationaliteByPays($user['ville_pays'] ?? 'Inconnu');
 
 include 'header.php'
     ?>
+<main>
 
-<div class="contanier">
+</main>
+<div class="container">
     <h1>Mon Profil</h1>
-    <p><strong>Nom</strong><?= htmlspecialchars($user['nom']) ?></p>
-    <p><strong>Prénom</strong><?= htmlspecialchars($user['prenom']) ?></p>
-    <p><strong>Pseudo</strong><?= htmlspecialchars($user['pseudo']) ?></p>
-    <p><strong>Âge :</strong><?= (int) $user['age'] ?> ans</p>
-    <p><strong>Ville :</strong><?= htmlspecialchars($user['ville_nom'] ?? 'Nom renseignée') ?></p>
-    <p><strong>Nationalié :</strong><?= htmlspecialchars($user['nationalite']) ?></p>
+    <p><strong>Nom</strong><?php htmlspecialchars($user['nom']) ?></p>
+    <p><strong>Prénom</strong><?php htmlspecialchars($user['prenom']) ?></p>
+    <p><strong>Pseudo</strong><?php htmlspecialchars($user['pseudo']) ?></p>
+    <p><strong>Âge :</strong><?php (int) $user['age'] ?> ans</p>
+    <p><strong>Ville :</strong><?php htmlspecialchars($user['ville_nom'] ?? 'Nom renseignée') ?></p>
+    <p><strong>Nationalité :</strong><?php htmlspecialchars($user['nationalite']) ?></p>
     <!-- Image placeholder -->
     <img src="https://via.placeholder.com/150" alt="Avatar" style="border-radius:50%;">
 

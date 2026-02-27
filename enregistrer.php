@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ville_id = $_POST['ville_id'] ?? '';
     $mdp = $_POST['mot_de_passe'] ?? '';
 
-    if ($nom && $prenom && $pseudo && $age && $villes_id && $mdp) {
+    if ($nom && $prenom && $pseudo && $age && $ville_id && $mdp) {
         $user = new Utilisateur();
         if ($user->save($nom, $prenom, $pseudo, $age, $ville_id, $mdp)) {
         }
@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = "Tous les champs sont requis.";
     }
 }
+
 include 'header.php';
 ?>
 <div class="container">
