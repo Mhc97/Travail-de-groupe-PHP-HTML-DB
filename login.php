@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include 'header.php'
-    ?>
+include 'header.php';
+?>
 <div class="container">
     <h1>Connexion</h1>
     <?php if ($message): ?>

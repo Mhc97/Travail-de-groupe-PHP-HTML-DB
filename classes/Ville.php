@@ -1,5 +1,5 @@
 <?php
-require_once '../config/databases.php';
+require_once __DIR__ . '/../config/databases.php';
 
 class Ville
 {

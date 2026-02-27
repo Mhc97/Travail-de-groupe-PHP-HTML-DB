@@ -2,11 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #876c6c;
 }
 header {
     background: #333;
-    color: #fff;
+    color: #000000;
     padding: 1rem;
 }
 nav ul {
@@ -16,7 +16,7 @@ nav ul {
     gap: 1rem;
 }
 nav a {
-    color: #fff;
+    color: #000000;
     text-decoration: none;
 }
 .container {

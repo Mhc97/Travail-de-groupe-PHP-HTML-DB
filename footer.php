@@ -1,6 +1,5 @@
-</main>
 <footer>
-    <p>&copy; <?php date('Y') ?></p>
+    <p>&copy; <?php echo date('d-m-Y') ?></p>
 </footer>
 
 </body>

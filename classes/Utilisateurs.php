@@ -1,5 +1,5 @@
 <?php
-require_once '../config/databases.php';
+require_once __DIR__ .'/../config/databases.php';
 
 class Utilisateur
 {
@@ -14,7 +14,7 @@ class Utilisateur
     public function save(string $nom, string $prenom, string $pseudo, int $age, int $ville_id, string $mdpClair): bool
     {
         $sql = "INSERT INTO utilisateurs (nom, prenom, pseudo, mot_de_passe, age, ville_id)
-            VALUES (:nom, :prenom, :mdp, :age, :ville_id, :pseudo)";
+            VALUES (:nom, :prenom, :pseudo, :mdp, :age, :ville_id)";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([
             ':nom' => $nom,

@@ -31,14 +31,5 @@ class Database {
         return $this->pdo;
     }
 
-    // Méthode utilitaire pour tester la connexion
-//     public function testConnection(): bool {
-//         try {
-//             $this->getConnection();
-//             return true;
-//         } catch (Exception $e) {
-//             return false;
-//         }
-//     }
 }
 ?>

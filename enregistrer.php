@@ -18,15 +18,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($nom && $prenom && $pseudo && $age && $ville_id && $mdp) {
         $user = new Utilisateur();
         if ($user->save($nom, $prenom, $pseudo, $age, $ville_id, $mdp)) {
+            $message = "Erreur lors de l'inscription (pseudo peut-être déjà utilisé).";
+        } else {
+            $message = "Tous les champs sont requis.";
         }
-        $message = "Erreur lors de l'inscription (pseudo peut-être déjà utilisé).";
-    } else {
-        $message = "Tous les champs sont requis.";
     }
 }
 
 include 'header.php';
 ?>
+
 <div class="container">
     <h1>Inscription</h1>
     <?php if ($message): ?>
@@ -51,11 +52,11 @@ include 'header.php';
         </div>
         <div>
             <label>Ville :</label>
-            <input type="text" name="ville_id" required>
             <select name="ville_id" required>
                 <option value="">choisissez</option>
                 <?php foreach ($villes as $v): ?>
-                    <option value="<?= $v['id'] ?>"><?php echo htmlspecialchars($v['nom']) ?>(<?= htmlspecialchars($v['pays']) ?>)
+                    <option value="<?php echo $v['id'] ?>">
+                        <?php echo htmlspecialchars($v['nom']) ?>(<?= htmlspecialchars($v['pays']) ?>)
                     </option>
                 <?php endforeach; ?>
             </select>

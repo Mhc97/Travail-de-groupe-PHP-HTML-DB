@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 require_once 'classes/Ville.php';
 
 $villeObj = new Ville();
@@ -35,7 +34,7 @@ $villes = $villeObj->getAllVillesWithNationalite();
             <tbody>
                 <?php foreach ($villes as $v): ?>
                     <tr>
-                        <td>#<?php $v['id'] ?></td>
+                        <td>#<?php echo $v['id'] ?></td>
                         <td><strong><?php echo htmlspecialchars($v['nom']) ?></strong></td>
                         <td><?php echo htmlspecialchars($v['pays']) ?></td>
                         <td>
