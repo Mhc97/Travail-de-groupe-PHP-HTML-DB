@@ -1,5 +1,5 @@
 <?php
-require_once '../config/database.php';
+require_once '../config/databases.php';
 
 class Utilisateur
 {
@@ -14,7 +14,7 @@ class Utilisateur
     public function save(string $nom, string $prenom, string $pseudo, int $age, int $ville_id, string $mdpClair): bool
     {
         $sql = "INSERT INTO utilisateurs (nom, prenom, pseudo, mot_de_passe, age, ville_id)
-            VALUES (:nom, :prenom, :mdp, :age, :ville_id)";
+            VALUES (:nom, :prenom, :mdp, :age, :ville_id, :pseudo)";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([
             ':nom' => $nom,
@@ -28,7 +28,7 @@ class Utilisateur
 
     public function findByPseudo(string $pseudo): ?array
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM WHERE pseudo = :pseudo");
+        $stmt = $this->pdo->prepare("SELECT * FROM utilisateurs WHERE pseudo = :pseudo");
         $stmt->execute([':pseudo' => $pseudo]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         return $user ?: null;

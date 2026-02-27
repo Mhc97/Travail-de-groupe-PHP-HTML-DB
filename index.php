@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once 'classes/Ville.php';
+require_once '../classes/Ville.php';
 
 $villeObj = new Ville();
 $villes = $villeObj->getAllVillesWithNationalite();

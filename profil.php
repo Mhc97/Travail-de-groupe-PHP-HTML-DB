@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 require_once 'classes/Utilisateurs.php';
-require_once './classes/Ville.php';
+require_once 'classes/Ville.php';
 
 $userObj = new Utilisateur();
 $user = $userObj->getUserWithVille($_SESSION['user_id']);
