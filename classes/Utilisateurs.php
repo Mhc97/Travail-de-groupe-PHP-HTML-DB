@@ -11,7 +11,7 @@ class Utilisateur
         $this->pdo = $db->getConnection();
     }
 
-    public function save(string $nom, $prenom, string $pseudo, int $age, int $ville_id, string $mdpClair): bool
+    public function save(string $nom, string $prenom, string $pseudo, int $age, int $ville_id, string $mdpClair): bool
     {
         $sql = "INSERT INTO utilisateurs (nom, prenom, pseudo, mot_de_passe, age, ville_id)
             VALUES (:nom, :prenom, :mdp, :age, :ville_id)";

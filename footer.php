@@ -1,6 +1,6 @@
 </main>
     <footer>
-        <p>&copy; <?= date('Y')?></p>
+        <p>&copy; <?php date('Y')?></p>
 </footer>
 
 </body>
