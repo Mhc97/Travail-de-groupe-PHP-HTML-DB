@@ -9,16 +9,15 @@
 </head>
 
 <body>
-    <>
-        <nav>
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="enregistrer.php">S'inscrire</a></li>
-                <li><a href="login.php">Se connecter</a></li>
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="profil.php">Profil</a></li>
-                    <li><a href="logout.php">Déconnexion</a></li>
-                <?php endif; ?>
-            </ul>
-        </nav>
-        </main>
+    <nav>
+        <ul>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="enregistrer.php">S'inscrire</a></li>
+            <li><a href="login.php">Se connecter</a></li>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <li><a href="profil.php">Profil</a></li>
+                <li><a href="logout.php">Déconnexion</a></li>
+            <?php endif; ?>
+        </ul>
+    </nav>
+    </main>
