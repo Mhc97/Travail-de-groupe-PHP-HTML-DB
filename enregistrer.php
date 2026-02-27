@@ -30,7 +30,7 @@ include 'header.php';
 <div class="container">
     <h1>Inscription</h1>
     <?php if ($message): ?>
-        <p><?= htmlspecialchars($message) ?></p>
+        <p><?php echo htmlspecialchars($message) ?></p>
     <?php endif; ?>
     <form method="post">
         <div>
@@ -55,7 +55,7 @@ include 'header.php';
             <select name="ville_id" required>
                 <option value="">choisissez</option>
                 <?php foreach ($villes as $v): ?>
-                    <option value="<?= $v['id'] ?>"><?= htmlspecialchars($v['nom']) ?>(<?= htmlspecialchars($v['pays']) ?>)
+                    <option value="<?= $v['id'] ?>"><?php echo htmlspecialchars($v['nom']) ?>(<?= htmlspecialchars($v['pays']) ?>)
                     </option>
                 <?php endforeach; ?>
             </select>
