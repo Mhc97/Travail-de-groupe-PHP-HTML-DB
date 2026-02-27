@@ -22,28 +22,23 @@ class Database {
                 
                 // Configuration des attributs PDO
                 $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
                 
             } catch (PDOException $e) {
                 // Message d'erreur plus détaillé pour le débogage
-                die("Erreur de connexion à la base de données : " . $e->getMessage() . 
-                    "<br>Vérifiez que :" .
-                    "<br>- MySQL est bien démarré" .
-                    "<br>- La base de données 'projet_php' existe" .
-                    "<br>- Les identifiants sont corrects");
+                die("Erreur de connexion à la base de données : " . $e->getMessage());
             }
         }
         return $this->pdo;
     }
 
     // Méthode utilitaire pour tester la connexion
-    public function testConnection(): bool {
-        try {
-            $this->getConnection();
-            return true;
-        } catch (Exception $e) {
-            return false;
-        }
-    }
+//     public function testConnection(): bool {
+//         try {
+//             $this->getConnection();
+//             return true;
+//         } catch (Exception $e) {
+//             return false;
+//         }
+//     }
 }
 ?>

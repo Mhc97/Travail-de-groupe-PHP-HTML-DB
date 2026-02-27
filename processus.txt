@@ -11,6 +11,17 @@ CREATE TABLE villes (
     capitale BOOLEAN DEFAULT FALSE
 );
 
+CREATE TABLE utilisateurs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    pseudo VARCHAR(50) UNIQUE NOT NULL,
+    mot_de_passe VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    ville_id INT,
+    FOREIGN KEY (ville_id) REFERENCES villes(id) ON DELETE SET NULL
+);
+
 nom des villes:
 
 INSERT INTO villes (nom, pays, capitale) VALUES ('Bruxelles', 'Belgique', TRUE),
@@ -32,3 +43,4 @@ pour ajouter nationalite les 10 villes
 
 ALTER TABLE villes ADD nationalite VARCHAR(50);
 UPDATE villes SET nationalite = 'Japonaise' WHERE pays = 'Japon' AND set nationalite 'portugaise' WHERE pays = 'portugal';
+
