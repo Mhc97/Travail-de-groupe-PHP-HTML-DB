@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = new Utilisateur();
     $data = $user->findByPseudo($pseudo);
     //password_verify pas vu en cours sa serre pour vérifier mots de passe
-    if (password_verify($mdp, $data['mot_de_passe'])) {
+    if ($data && password_verify($mdp, $data['mot_de_passe'])) {
         $_SESSION['user_id'] = $data['id'];
         header('Location: profil.php');
         exit;

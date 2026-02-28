@@ -8,21 +8,24 @@ $villes = $villeObj->getAllVilles();
 
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupération avec valeur par défaut et cast pour les entiers
     $nom = $_POST['nom'] ?? '';
     $prenom = $_POST['prenom'] ?? '';
     $pseudo = $_POST['pseudo'] ?? '';
-    $age = $_POST['age'] ?? '';
-    $ville_id = $_POST['ville_id'] ?? '';
+    $age = (int) ($_POST['age'] ?? 0); // cast ajouté 
+    $ville_id = (int) ($_POST['ville_id'] ?? 0); // cast ajouté pour mieux encapsuler
     $mdp = $_POST['mot_de_passe'] ?? '';
 
     if ($nom && $prenom && $pseudo && $age && $ville_id && $mdp) {
         $user = new Utilisateur();
         if ($user->save($nom, $prenom, $pseudo, $age, $ville_id, $mdp)) {
-            $message = "Tous les champs sont requis.";
+            $message = "Inscription réussie ! <a href='login.php'>Connectez-vous</a>";
         } else {
             $message = "Erreur lors de l'inscription (pseudo peut-être déjà utilisé).";
 
         }
+    } else {
+        $message = "tous les champs son requis";
     }
 }
 
