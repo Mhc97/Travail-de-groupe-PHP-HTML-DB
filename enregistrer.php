@@ -18,9 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($nom && $prenom && $pseudo && $age && $ville_id && $mdp) {
         $user = new Utilisateur();
         if ($user->save($nom, $prenom, $pseudo, $age, $ville_id, $mdp)) {
-            $message = "Erreur lors de l'inscription (pseudo peut-être déjà utilisé).";
-        } else {
             $message = "Tous les champs sont requis.";
+        } else {
+            $message = "Erreur lors de l'inscription (pseudo peut-être déjà utilisé).";
+            
         }
     }
 }
