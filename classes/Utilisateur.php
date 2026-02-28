@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ .'/../config/databases.php';
+require_once __DIR__ . '/../config/databases.php';
 
 class Utilisateur
 {
@@ -13,6 +13,9 @@ class Utilisateur
 
     public function save(string $nom, string $prenom, string $pseudo, int $age, int $ville_id, string $mdpClair): bool
     {
+        // Hasher le mot de passe pour une meilleur sécurité
+        $hash = password_hash($mdpClair, PASSWORD_DEFAULT);
+
         $sql = "INSERT INTO utilisateurs (nom, prenom, pseudo, mot_de_passe, age, ville_id)
             VALUES (:nom, :prenom, :pseudo, :mdp, :age, :ville_id)";
         $stmt = $this->pdo->prepare($sql);
@@ -20,7 +23,7 @@ class Utilisateur
             ':nom' => $nom,
             ':prenom' => $prenom,
             ':pseudo' => $pseudo,
-            ':mdp' => $mdpClair, // mot de passe
+            ':mdp' => $hash, // modification pour le mot de passe j'ai remplacer $mdpClair par hash pour une meilleur sécurité
             ':age' => $age,
             ':ville_id' => $ville_id
         ]);

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'classes/Ville.php';
-require_once 'classes/Utilisateurs.php';
+require_once 'classes/Utilisateur.php';
 
 $villeObj = new Ville();
 $villes = $villeObj->getAllVilles();

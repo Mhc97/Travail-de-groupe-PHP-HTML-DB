@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-require_once 'classes/Utilisateurs.php';
+require_once 'classes/Utilisateur.php';
 require_once 'classes/Ville.php';
 
 $userObj = new Utilisateur();

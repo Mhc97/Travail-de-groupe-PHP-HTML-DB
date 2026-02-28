@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'classes/Utilisateurs.php';
+require_once 'classes/Utilisateur.php';
 
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = new Utilisateur();
     $data = $user->findByPseudo($pseudo);
-    //password_verify pas vu en cours serre pour vérifier mots de passe
+    //password_verify pas vu en cours sa serre pour vérifier mots de passe
     if (password_verify($mdp, $data['mot_de_passe'])) {
         $_SESSION['user_id'] = $data['id'];
         header('Location: profil.php');
@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 include 'header.php';
 ?>
+
 <div class="container">
     <h1>Connexion</h1>
     <?php if ($message): ?>
