@@ -24,7 +24,7 @@ include 'header.php';
     <p><strong>Pseudo :</strong><?php echo htmlspecialchars($user['pseudo']) ?></p>
     <p><strong>Âge :</strong><?php echo (int) $user['age'] ?> ans</p>
     <p><strong>Ville :</strong><?php echo htmlspecialchars($user['ville_nom'] ?? 'Non renseignée') ?></p>
-    <p><strong>Nationalité :</strong><?php echo htmlspecialchars($user($nationalite)) ?></p>
+    <p><strong>Nationalité :</strong><?php echo htmlspecialchars($nationalite) ?></p>
     <!-- Image placeholder -->
     <img src="https://via.placeholder.com/150" alt="Avatar" style="border-radius:50%;">
 
