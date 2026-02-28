@@ -9,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $user = new Utilisateur();
     $data = $user->findByPseudo($pseudo);
-
-    if ($data && $mdp === $data['mot_de_passe']) {
+    //password_verify pas vu en cours serre pour vérifier mots de passe
+    if (password_verify($mdp, $data['mot_de_passe'])) {
         $_SESSION['user_id'] = $data['id'];
         header('Location: profil.php');
         exit;

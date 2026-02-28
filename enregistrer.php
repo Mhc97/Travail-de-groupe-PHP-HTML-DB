@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $message = "Tous les champs sont requis.";
         } else {
             $message = "Erreur lors de l'inscription (pseudo peut-être déjà utilisé).";
-            
+
         }
     }
 }
