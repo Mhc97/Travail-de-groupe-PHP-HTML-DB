@@ -32,25 +32,31 @@ $villes = $villeObj->getAllVillesWithNationalite();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($villes as $v): ?>
+                <?php if (!empty($villes)): ?>
+                    <?php foreach ($villes as $v): ?>
+                        <tr>
+                            <td>#<?php echo $v['id'] ?></td>
+                            <td><strong><?php echo htmlspecialchars($v['nom']) ?></strong></td>
+                            <td><?php echo htmlspecialchars($v['pays']) ?></td>
+                            <td>
+                                <span class="nationalite-badge">
+                                    <?php echo htmlspecialchars($v['nationalite']) ?>
+                                </span>
+                            </td>
+                            <td>
+                                <?php if ($v['capitale']): ?>
+                                    <span class="capitale-badge">⭐ Capitale</span>
+                                <?php else: ?>
+                                    <span>🏙️ Ville</span>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
                     <tr>
-                        <td>#<?php echo $v['id'] ?></td>
-                        <td><strong><?php echo htmlspecialchars($v['nom']) ?></strong></td>
-                        <td><?php echo htmlspecialchars($v['pays']) ?></td>
-                        <td>
-                            <span class="nationalite-badge">
-                                <?php echo htmlspecialchars($v['nationalite']) ?>
-                            </span>
-                        </td>
-                        <td>
-                            <?php if ($v['capitale']): ?>
-                                <span class="capitale-badge">⭐ Capitale</span>
-                            <?php else: ?>
-                                <span>🏙️ Ville</span>
-                            <?php endif; ?>
-                        </td>
+                        <td colspan="5">Aucune ville trouvée.</td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>

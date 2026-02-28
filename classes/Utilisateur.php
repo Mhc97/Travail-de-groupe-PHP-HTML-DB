@@ -37,7 +37,6 @@ class Utilisateur
         return $user ?: null;
 
 
-
     }
 
     public function getUserWithVille(int $userId): ?array
