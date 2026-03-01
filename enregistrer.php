@@ -60,9 +60,10 @@ include 'header.php';
                 <option value="">choisissez</option>
                 <?php foreach ($villes as $v): ?>
                     <option value="<?php echo $v['id'] ?>">
-                        <?php echo htmlspecialchars($v['nom']) ?>(<?= htmlspecialchars($v['pays']) ?>)
-                    </option>
-                <?php endforeach; ?>
+                        <?php echo htmlspecialchars($v['nom']) ?>
+                        <!-- ?= c'est pareil que ?php echo -->
+                        (<?= htmlspecialchars($v['pays']) ?>)
+                        <?php endforeach; ?>
             </select>
         </div>
         <div>
