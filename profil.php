@@ -19,6 +19,8 @@ include 'header.php';
 
 <div class="container">
     <h1>Mon Profil</h1>
+    <!-- Image -->
+    <img src="./img/inconnue.webp" alt="Avatar" style="border-radius:25%; height: 150px; width 250px;">
     <p><strong>Nom :</strong><?php echo htmlspecialchars($user['nom']) ?></p>
     <p><strong>Prénom :</strong><?php echo htmlspecialchars($user['prenom']) ?></p>
     <p><strong>Pseudo :</strong><?php echo htmlspecialchars($user['pseudo']) ?></p>
@@ -26,8 +28,7 @@ include 'header.php';
     <p><strong>Âge :</strong><?php echo htmlspecialchars((int) $user['age']) ?> ans</p>
     <p><strong>Ville :</strong><?php echo htmlspecialchars($user['ville_nom'] ?? 'Non renseignée') ?></p>
     <p><strong>Nationalité :</strong><?php echo htmlspecialchars($nationalite) ?></p>
-    <!-- Image placeholder -->
-    <img src="https://via.placeholder.com/150" alt="Avatar" style="border-radius:50%;">
+
 
 </div>
 <?php include 'footer.php' ?>
